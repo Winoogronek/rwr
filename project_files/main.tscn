@@ -1,11 +1,10 @@
 [gd_scene format=3 uid="uid://mgp02mkor0at"]
 
 [ext_resource type="Script" uid="uid://b74aq41vgfphe" path="res://node_3d.gd" id="1_a202f"]
+[ext_resource type="PackedScene" uid="uid://di1jdpb8olseg" path="res://assets/Hand by Poly by Google - btWmPNVSKUc.glb" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://bgd8ewath85j5" path="res://assets/Glove by Quaternius - l1zv4LaA4I.glb" id="3_1bvp3"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_4p2t6"]
-size = Vector3(0.1, 0.1, 0.1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_edqvp"]
 size = Vector3(0.1, 0.1, 0.1)
 
 [node name="Node3D" type="Node3D" unique_id=1665236550]
@@ -21,11 +20,16 @@ tracker = &"left_hand"
 [node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/LeftController" unique_id=1180121250]
 mesh = SubResource("BoxMesh_4p2t6")
 
+[node name="HandLeftRoot" type="Node3D" parent="XROrigin3D/LeftController" unique_id=1508221240]
+
+[node name="Hand by Poly by Google - btWmPNVSKUc" parent="XROrigin3D/LeftController/HandLeftRoot" unique_id=1953497747 instance=ExtResource("2_h2yge")]
+
 [node name="RightController" type="XRController3D" parent="XROrigin3D" unique_id=687279533]
 tracker = &"right_hand"
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/RightController" unique_id=682470565]
-mesh = SubResource("BoxMesh_edqvp")
+[node name="HandRightRoot" type="Node3D" parent="XROrigin3D/RightController" unique_id=828869538]
+
+[node name="Root Scene" parent="XROrigin3D/RightController/HandRightRoot" unique_id=114075903 instance=ExtResource("3_1bvp3")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=576108642]
 

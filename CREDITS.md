@@ -1,0 +1,1 @@
+Hand by Poly by Google [CC-BY] via Poly Pizza
